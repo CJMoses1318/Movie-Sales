@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Rental Platform</title>
+    <script
+      src="https://kit.fontawesome.com/12cb895552.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="movies.css" />
+  </head>
+  <body>
+    <div class="header">
+      <figure class="overlay"></figure>
+      <section id="navbar">
+        <div class="nav__container">
+          <img src="/assets/moviereel.jpeg" alt="" class="logo" />
+          <ul class="nav__links">
+            <li>
+              <a href="index.html" class="nav__link link__hover-effect">Home</a>
+            </li>
+            <li>
+              <a href="#" class="nav__link link__hover-effect"
+                >Find your movie</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="nav__link link__hover-effect nav__link--primary"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="title">
+          <h2 class="title__text">Browse Our Movies</h2>
+        </div>
+        <div class="input__wrapper">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Enter movie title"
+            class="input__text"
+          />
+          <button id="searchButton">
+            <i class="fas fa-magnifying-glass"></i>
+          </button>
+        </div>
+      </section>
+    </div>
+
+    <div class="browse">
+      <div class="browse__wrapper">
+        <h1 class="browse__text">
+          <label for="yearRange">
+            Select <span class="indigo">Year:</span>
+          </label>
+        </h1>
+
+        <div class="price__filter">
+          <label for="sortOrder">Sort <span class="indigo">Order:</span></label>
+          <select id="sortOrder">
+            <option value="ascending">Ascending</option>
+            <option value="descending">Descending</option>
+          </select>
+        </div>
+      </div>
+      <div id="loadingState" style="display: none;">Loading...</div>
+
+      <div id="resultsContainer" class="flex-container">
+        <div class="skeleton">
+          <div class="skeleton-title"></div>
+          <div class="skeleton-image"></div>
+          <div class="skeleton-text"></div>
+        </div>
+        <div class="skeleton">
+          <div class="skeleton-title"></div>
+          <div class="skeleton-image"></div>
+          <div class="skeleton-text"></div>
+        </div>
+        <div class="skeleton">
+          <div class="skeleton-title"></div>
+          <div class="skeleton-image"></div>
+          <div class="skeleton-text"></div>
+        </div>
+        <div class="skeleton">
+          <div class="skeleton-title"></div>
+          <div class="skeleton-image"></div>
+          <div class="skeleton-text"></div>
+        </div>
+        <div class="skeleton">
+          <div class="skeleton-title"></div>
+          <div class="skeleton-image"></div>
+          <div class="skeleton-text"></div>
+        </div>
+        <div class="skeleton">
+          <div class="skeleton-title"></div>
+          <div class="skeleton-image"></div>
+          <div class="skeleton-text"></div>
+        </div>
+        <div class="skeleton">
+          <div class="skeleton-title"></div>
+          <div class="skeleton-image"></div>
+          <div class="skeleton-text"></div>
+        </div>
+        <div class="skeleton">
+          <div class="skeleton-title"></div>
+          <div class="skeleton-image"></div>
+          <div class="skeleton-text"></div>
+        </div>
+        <div class="skeleton">
+          <div class="skeleton-title"></div>
+          <div class="skeleton-image"></div>
+          <div class="skeleton-text"></div>
+        </div>
+        <div class="skeleton">
+          <div class="skeleton-title"></div>
+          <div class="skeleton-image"></div>
+          <div class="skeleton-text"></div>
+        </div>
+      </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
