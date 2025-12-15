@@ -91,39 +91,9 @@ function sortMovies(order) {
     });
 }
 
-
-
-
-
-    function displayMovies(movies) {
-        const resultsContainer = document.getElementById('resultsContainer');
-        resultsContainer.innerHTML = '';
-
-        // Add a check to ensure movies is an array before attempting forEach
-        if (!Array.isArray(movies)) {
-            console.error("Expected an array for movies, but received:", movies);
-            // Optionally, display an error message to the user
-            resultsContainer.innerHTML = '<p>Error: Could not load movies.</p>';
-            return; // Stop execution if movies is not an array
-        }
-
-        movies.forEach(movie => {
-            const movieDiv = document.createElement('div');
-            // Ensure movie.title and movie.year exist, or handle their absence
-            const title = movie.title || 'Untitled';
-            const year = movie.year ? `(${movie.year})` : '';
-            movieDiv.innerHTML = `<h3>${title} ${year}</h3>`;
-            resultsContainer.appendChild(movieDiv);
-        });
-    }
-
-
-
-
 // Function to display movies
 function displayMovies(sortedMovies) {
   document.getElementById('loadingState').style.display = 'none';
-
     const resultsContainer = document.getElementById('resultsContainer');
     resultsContainer.innerHTML = '';
 
