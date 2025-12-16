@@ -88,7 +88,7 @@ nav {
 }
 
 .nav__link {
-  margin-left: 16px;
+  margin: 0 16px;
   position: relative;
   text-decoration: none;
   font-size: 20px;
@@ -103,6 +103,7 @@ nav {
 .nav__link::after {
   content: "";
   position: absolute;
+  margin-left: 8px;
   right: 0;
   bottom: -2px;
   width: 100%;
@@ -122,6 +123,7 @@ nav {
   align-items: center;
   padding-bottom: 2px;
 }
+
 .nav__link--primary {
   margin: 0;
   padding: 10px 32px;
@@ -135,10 +137,6 @@ nav {
   transition: all 300ms ease;
   border-radius: 8px;
   cursor: no-drop;
-}
-
-.nav__link--primary:hover {
-  text-decoration: none;
 }
 
 .nav__link--primary:hover {
@@ -320,14 +318,6 @@ LANDING
 
 /* 
 
-HAMBURGER
-
-*/
-
-
-
-/* 
-
 MOBILE RESPONSIVENESS 
 
 */
@@ -349,14 +339,15 @@ MOBILE RESPONSIVENESS
         width: 100%; /* Full width */
         height: 100%; /* Full height */
         background-color: rgba(0, 0, 0, 0.9); /* Semi-transparent background */
-        display: none; /* Hidden by default */
         flex-direction: column; /* Stack menu links vertically */
         align-items: center; /* Center align items */
         justify-content: center; /* Center content vertically */
     }
 
     .menu.active {
-        display: flex; /* Show menu when active */
+        visibility: visible;
+        opacity: 1;
+        transform: translateX(0);
     }
 
     .menu__link {
@@ -370,5 +361,13 @@ MOBILE RESPONSIVENESS
         position: absolute; /* Position close button */
         top: 20px; /* Adjust position */
         right: 20px; /* Adjust position */
+    }
+
+    .input__text {
+        min-width: 200px; /* Adjust for smaller screens */
+    }
+
+    #searchButton {
+        min-width: 20%;
     }
 }
