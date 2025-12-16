@@ -71,7 +71,7 @@ function displayResults(data) {
 
 // SORT FUNCTION
 
-let movies = [
+const movies = [
     { title: "The Fast and the Furious", poster: "https://m.media-amazon.com/images/M/MV5BZGRiMDE1NTMtMThmZS00YjE4LWI1ODQtNjRkZGZlOTg2MGE1XkEyXkFqcGc@._V1_SX300.jpg", imdbID: "tt0232500", year: 2001 },
     { title: "Fast & Furious 6", poster: "https://m.media-amazon.com/images/M/MV5BMTM3NTg2NDQzOF5BMl5BanBnXkFtZTcwNjc2NzQzOQ@@._V1_SX300.jpg", imdbID: "tt1905041", year: 2013 },
     { title: "Fast Five", poster: "https://m.media-amazon.com/images/M/MV5BMTUxNTk5MTE0OF5BMl5BanBnXkFtZTcwMjA2NzY3NA@@._V1_SX300.jpg", imdbID: "tt1596343", year: 2011 },
@@ -93,13 +93,12 @@ function sortMovies(order) {
 
 // Function to display movies
 function displayMovies(sortedMovies) {
-  document.getElementById('loadingState').style.display = 'none';
     const resultsContainer = document.getElementById('resultsContainer');
     resultsContainer.innerHTML = '';
-
- sortedMovies.forEach(movie => {
+    
+    sortedMovies.forEach(movie => {
         const movieDiv = document.createElement('div');
-        movieDiv.className = 'movie-item'; // Add the class for styling
+        movieDiv.textContent = `${movie.title} (${movie.year})`;
         movieDiv.innerHTML = `
             <h3>${movie.title} (${movie.year})</h3>
             <img src="${movie.poster}" alt="${movie.title} poster" style="width:100px;">
@@ -114,7 +113,6 @@ document.getElementById('sortOrder').addEventListener('change', displayMovies);
 
 const sortOrder = document.getElementById('sortOrder');
 sortOrder.addEventListener('change', function() {
-    document.getElementById('loadingState').style.display = 'block';
     const sortedMovies = sortMovies(sortOrder.value);
     displayMovies(sortedMovies);
 });
@@ -122,104 +120,15 @@ sortOrder.addEventListener('change', function() {
 // Initial display
 displayMovies(movies);
 
-movies = [];
+// Toggle Hamburger
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Event listener for sort order change
-    const sortOrder = document.getElementById('sortOrder');
-    sortOrder.addEventListener('change', function() {
-        document.getElementById('loadingState').style.display = 'block';
-        const sortedMovies = sortMovies(sortOrder.value);
-        displayMovies(sortedMovies);
-    });
-
-    // Call fetchMovies to initiate loading
-    fetchMovies();
-});
-
-function fetchMovies() {
-    // Show skeleton loading state
-    
-    document.getElementById('resultsContainer').innerHTML = `
-        <div class="skeleton">
-            <div class="skeleton-title"></div>
-            <div class="skeleton-image"></div>
-            <div class="skeleton-text"></div>
-        </div>
-        <div class="skeleton">
-            <div class="skeleton-title"></div>
-            <div class="skeleton-image"></div>
-            <div class="skeleton-text"></div>
-        </div>
-        <div class="skeleton">
-            <div class="skeleton-title"></div>
-            <div class="skeleton-image"></div>
-            <div class="skeleton-text"></div>
-        </div>
-        <div class="skeleton">
-            <div class="skeleton-title"></div>
-            <div class="skeleton-image"></div>
-            <div class="skeleton-text"></div>
-        </div>
-        <div class="skeleton">
-            <div class="skeleton-title"></div>
-            <div class="skeleton-image"></div>
-            <div class="skeleton-text"></div>
-        </div>
-        <div class="skeleton">
-            <div class="skeleton-title"></div>
-            <div class="skeleton-image"></div>
-            <div class="skeleton-text"></div>
-        </div>
-        <div class="skeleton">
-            <div class="skeleton-title"></div>
-            <div class="skeleton-image"></div>
-            <div class="skeleton-text"></div>
-        </div>
-        <div class="skeleton">
-            <div class="skeleton-title"></div>
-            <div class="skeleton-image"></div>
-            <div class="skeleton-text"></div>
-        </div>
-        <div class="skeleton">
-            <div class="skeleton-title"></div>
-            <div class="skeleton-image"></div>
-            <div class="skeleton-text"></div>
-        </div>
-        <div class="skeleton">
-            <div class="skeleton-title"></div>
-            <div class="skeleton-image"></div>
-            <div class="skeleton-text"></div>
-        </div>
-    `;
-
-    // Simulate a data fetch
-    setTimeout(() => {
-      movies = [
-        { title: "The Fast and the Furious", poster: "https://m.media-amazon.com/images/M/MV5BZGRiMDE1NTMtMThmZS00YjE4LWI1ODQtNjRkZGZlOTg2MGE1XkEyXkFqcGc@._V1_SX300.jpg", imdbID: "tt0232500", year: 2001 },
-        { title: "Fast & Furious 6", poster: "https://m.media-amazon.com/images/M/MV5BMTM3NTg2NDQzOF5BMl5BanBnXkFtZTcwNjc2NzQzOQ@@._V1_SX300.jpg", imdbID: "tt1905041", year: 2013 },
-        { title: "Fast Five", poster: "https://m.media-amazon.com/images/M/MV5BMTUxNTk5MTE0OF5BMl5BanBnXkFtZTcwMjA2NzY3NA@@._V1_SX300.jpg", imdbID: "tt1596343", year: 2011 },
-        { title: "Fast & Furious", poster: "https://m.media-amazon.com/images/M/MV5BM2Y1YzhkNzUtMzhmZC00OTFkLWJjZDktMWYzZmQ0Y2Y5ODcwXkEyXkFqcGc@._V1_SX300.jpg", imdbID: "tt1013752", year: 2009 },
-        { title: "The Fast and the Furious: Tokyo Drift", poster: "https://m.media-amazon.com/images/M/MV5BMTQ2NTMxODEyNV5BMl5BanBnXkFtZTcwMDgxMjA0MQ@@._V1_SX300.jpg", imdbID: "tt0463985", year: 2006 },
-        { title: "2 Fast 2 Furious", poster: "https://m.media-amazon.com/images/M/MV5BOTQzYzEwNWMtOTAwYy00YWYwLWE1NTEtZTkxOGQxZTM0M2VhXkEyXkFqcGc@._V1_SX300.jpg", imdbID: "tt0322259", year: 2003 },
-        { title: "Fast & Furious Presents: Hobbs & Shaw", poster: "https://m.media-amazon.com/images/M/MV5BNmU4OTA5NGYtMTFjMS00MzgxLWFjNTMtYjdlMThlYzc4M2M4XkEyXkFqcGc@._V1_SX300.jpg", imdbID: "tt6806448", year: 2019 },
-        { title: "F9: The Fast Saga", poster: "https://m.media-amazon.com/images/M/MV5BODJkMTQ5ZmQtNzQxYy00ZWNlLWI0ZGYtYjU1NzdiMjcyNDRmXkEyXkFqcGc@._V1_SX300.jpg", imdbID: "tt5433138", year: 2021 },
-        { title: "Fast X", poster: "https://m.media-amazon.com/images/M/MV5BYzEwZjczOTktYzU1OS00YjJlLTgyY2UtNWEzODBlN2RjZDEwXkEyXkFqcGc@._V1_SX300.jpg", imdbID: "tt5433140", year: 2023 },
-        { title: "Fast Times at Ridgemont High", poster: "https://m.media-amazon.com/images/M/MV5BMWM4NTc3N2YtMjk2Ny00MTRmLWE4YzItNTVhMTRlODVkNmE5XkEyXkFqcGc@._V1_SX300.jpg", imdbID: "tt0083929", year: 1982 },
-      ];
-        displayMovies(movies);
-    }, 2000);
+function openMenu() {
+    const menu = document.querySelector('.menu');
+    menu.classList.add('active'); // Add active class to show menu
 }
 
-function displayMovies(movies) {
-    const resultsContainer = document.getElementById('resultsContainer');
-    resultsContainer.innerHTML = ''; 
-
-    movies.forEach(movie => {
-        const movieDiv = document.createElement('div');
-        movieDiv.innerHTML = `<h3>${movie.title} (${movie.year})</h3>`;
-        resultsContainer.appendChild(movieDiv);
-    });
+function closeMenu() {
+    const menu = document.querySelector('.menu');
+    menu.classList.remove('active'); // Remove active class to hide menu
 }
 
-fetchMovies();

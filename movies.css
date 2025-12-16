@@ -236,77 +236,62 @@ RESULTS CONTAINER
     justify-content: center;
     align-items: center;
     margin-top: 24px;
+    box-sizing: border-box;
+    border: 1px black
     
 }
 
-.movie {
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    flex: 0 0 200px;
-    margin: 10px; 
-    border: 1px solid #ccc;
-    padding: 10px;
-    box-sizing: border-box; 
-}
-
-.movie img {
-    max-width: 150px;
-    display: block;
-    justify-content: center;
-    align-items: center;
-}
-
-.movie h2 {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    font-size: 24px;
-    width: 70%;
-    text-align: center;
-}
-
-.flex-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+.results-container {
     gap: 10px;
-}
-
-.movie-item {
-    flex: 1 1 30%;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    padding: 10px;
-    border-radius: 5px;
-    background-color: #f9f9f9;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    flex-wrap: wrap; 
+    justify-content: space-around; 
+    box-sizing: border-box;
+    border: 1px black;
 }
 
-.skeleton {
-    background-color: #e0e0e0; 
-    border-radius: 4px; 
-    padding: 10px;
+.results-container div {
+    flex: 1 1 200px; 
+    margin: 10px; 
+    text-align: center; 
+    box-sizing: border-box;
 }
 
-.skeleton-title {
-    height: 20px;
-    width: 60%; 
-    margin-bottom: 10px; 
+.results-container img {
+    max-width: 100%; 
+    height: auto; 
 }
 
-.skeleton-image {
-    height: 100px; 
-    background-color: #c0c0c0; 
-    margin-bottom: 10px; 
+/* 
+
+MEDIA
+
+*/
+
+/* Styles for phones (up to 600px) */
+@media only screen and (max-width: 600px) {
+    body {
+        background-color: #f6f3f7;
+    }
 }
 
-.skeleton-text {
-    height: 15px;
-    width: 80%; 
+/* Styles for tablets (between 601px and 1024px) */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    body {
+        background-color: #f6f3f7; 
+    }
+}
+
+/* Styles for laptops (between 1025px and 1440px) */
+@media only screen and (min-width: 1025px) and (max-width: 1440px) {
+    body {
+        background-color: #f6f3f7; 
+    }
+}
+
+/* Styles for larger screens (desktops) */
+@media only screen and (min-width: 1441px) {
+    body {
+        background-color: #f6f3f7
+    }
 }
