@@ -296,6 +296,7 @@ HEADER
   line-height: 40px;
   outline: none;
   padding: 0 15px;
+  margin: 0 auto;
   transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
   width: 100%;
   font-size: 24px;
@@ -486,12 +487,12 @@ MOBILE RESPONSIVENESS
   outline: none;
   padding: 0 15px;
   padding-left: 25px;
-  margin-bottom: ;
+  margin-bottom: 0 auto;
   transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
   width: 80%;
   font-size: 24px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   position: relative;
   justify-content: center;
   align-items: center; 
@@ -508,18 +509,22 @@ MOBILE RESPONSIVENESS
   justify-content: center;
   min-width: 200px;
   width: 80%;
-  padding: 10px;
+  max-width: 200px;
+  padding: 20px;
   box-sizing: border-box;
 }
 
 #searchButton {
-  width: 80%;
-  margin-top: 12px;
+  max-width: 80px;
+  margin-left: 10px;
+  margin-bottom: 8px;
+  padding: 10px;
   font-size: 40px;
   background-color: rgb(78, 16, 165);
   color: #fff;
+  justify-content: center;
+  align-items: center;
   border-radius: 20px;
   transition: all 0.25s ease;
 }
-
 }

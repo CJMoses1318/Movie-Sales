@@ -8,6 +8,10 @@
       src="https://kit.fontawesome.com/12cb895552.js"
       crossorigin="anonymous"
     ></script>
+    <script 
+    src="movies.js" defer
+    ></script>
+    <script src="index.js" defer></script>
     <link rel="stylesheet" href="movies.css" />
   </head>
   <body>
@@ -58,13 +62,13 @@
             placeholder="Enter movie title"
             class="input__text"
           />
-          <button id="searchButton">
+          <button id="searchButton" onclick="searchMovies()">
             <i class="fas fa-magnifying-glass"></i>
           </button>
         </div>
     </div>
 
-    <div class="browse">
+    <div class="browse"> 
       <div class="browse__wrapper">
         <h1 class="browse__text">
           <label for="yearRange">

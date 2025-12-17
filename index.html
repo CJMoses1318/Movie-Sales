@@ -6,12 +6,13 @@
     <title>Car Sales Platform</title>
     <link rel="stylesheet" href="style.css" />
     <script src="script.js"></script>
+    <script src="index.js" defer></script>
     <script
       src="https://kit.fontawesome.com/12cb895552.js"
       crossorigin="anonymous"
     ></script>
   </head>
-
+  
   <body>
     <nav>
         <div class="row nav__row">
@@ -61,8 +62,8 @@
                 </h2>
             </div>
             <div class="input__wrapper">
-                <input type="text" placeholder="Enter Movie Title" class="input__text">
-                <button class="search">
+                <input type="text" placeholder="Enter Movie Title" class="input__text" onchange="handleInputChange(event)">
+                <button class="search" onclick="rerouteToMoviesPage()">
                     <i class="fas fa-magnifying-glass"></i>
                 </button>
             </div>
